@@ -21,6 +21,7 @@
         NSLog(@"[InjectTest] root=%@", root);
         if (!root) return;
 
+        NSLog(@"[InjectTest] presenting alert...");
         UIAlertController *alert = [UIAlertController
             alertControllerWithTitle:@"Inject OK"
             message:NSBundle.mainBundle.bundleIdentifier
