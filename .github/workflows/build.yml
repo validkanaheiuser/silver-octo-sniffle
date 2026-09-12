@@ -1,0 +1,33 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: brew install ldid
+
+      - name: Install Theos (roothide)
+        run: git clone --recursive https://github.com/roothide/theos.git $THEOS
+        env:
+          THEOS: ${{ github.workspace }}/theos
+
+      - name: Build .deb
+        run: make package FINALPACKAGE=1
+        env:
+          THEOS: ${{ github.workspace }}/theos
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: InjectTest-deb
+          path: packages/*.deb
+          retention-days: 30

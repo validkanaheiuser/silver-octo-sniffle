@@ -1,0 +1,8 @@
+Package: com.test.injecttest
+Name: InjectTest
+Version: 1.0.0
+Architecture: iphoneos-arm64e
+Description: Shows alert if dylib injection succeeds in MBV Bank
+Maintainer: test
+Author: test
+Section: Tweaks
