@@ -1,1 +1,1 @@
-{ Filter = { Bundles = ( "com.mbv.mobilebanking" ); }; }
+{ Filter = { Bundles = ( "com.apple.mobilesafari" ); }; }
