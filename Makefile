@@ -10,5 +10,6 @@ include $(THEOS)/makefiles/common.mk
 TWEAK_NAME = InjectTest
 InjectTest_FILES = Tweak.x
 InjectTest_FILTER = com.mbv.mobilebanking
+InjectTest_CFLAGS = -Wno-deprecated-declarations
 
 include $(THEOS_MAKE_PATH)/tweak.mk
